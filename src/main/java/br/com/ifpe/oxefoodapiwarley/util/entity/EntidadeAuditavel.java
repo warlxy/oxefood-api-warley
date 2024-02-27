@@ -15,8 +15,8 @@ public class EntidadeAuditavel extends EntidadeNegocio {
 
     private LocalDate dataUltimaModificacao;
 
-    private Long criadoPor; // Id do usuário que o criou
+    private Long criadoPor; // id do usuário que o criou
 
-    private Long ultimaModificacaoPor; // Id do usuário que fez a última alteração
+    private Long ultimaModificacaoPor; // id do usuário que fez a última alteração
 
 }
