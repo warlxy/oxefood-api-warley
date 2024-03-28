@@ -3,9 +3,7 @@ package br.com.ifpe.oxefoodapiwarley.modelo.cliente;
 import java.time.LocalDate;
 
 import br.com.ifpe.oxefoodapiwarley.util.entity.EntidadeAuditavel;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -24,6 +22,7 @@ import org.hibernate.annotations.SQLRestriction;
 public class Cliente extends EntidadeAuditavel  {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String nome;
