@@ -1,5 +1,6 @@
 package br.com.ifpe.oxefoodapiwarley.modelo.produto;
 
+import br.com.ifpe.oxefoodapiwarley.modelo.cliente.Cliente;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -44,6 +45,16 @@ public class ProdutoService {
         produto.setTempoEntregaMaximo(produtoAlterado.getTempoEntregaMaximo());
 
         produto.setVersao(produto.getVersao() + 1);
+        repository.save(produto);
+    }
+
+    @Transactional
+    public void delete(Long id) {
+
+        Produto produto = repository.findById(id).get();
+        produto.setHabilitado(Boolean.FALSE);
+        produto.setVersao(produto.getVersao() + 1);
+
         repository.save(produto);
     }
 }
