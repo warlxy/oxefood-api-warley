@@ -6,7 +6,7 @@ import lombok.*;
 import org.hibernate.annotations.SQLRestriction;
 
 @Entity
-@Table(name = "Categoria")
+@Table(name = "CategoriaProduto")
 @SQLRestriction("habilitado = true")
 @Builder
 @Getter
@@ -15,15 +15,7 @@ import org.hibernate.annotations.SQLRestriction;
 @NoArgsConstructor
 public class CategoriaProduto extends EntidadeNegocio {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
-    private String codigo;
-
-    private String titulo;
-
-    private String
-
+    @Column
+    private String descricao;
 
 }
