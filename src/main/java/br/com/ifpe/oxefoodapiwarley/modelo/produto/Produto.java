@@ -1,5 +1,6 @@
 package br.com.ifpe.oxefoodapiwarley.modelo.produto;
 
+import br.com.ifpe.oxefoodapiwarley.modelo.categoria.CategoriaProduto;
 import br.com.ifpe.oxefoodapiwarley.util.entity.EntidadeAuditavel;
 import jakarta.persistence.*;
 import org.hibernate.annotations.SQLRestriction;
@@ -40,5 +41,8 @@ public class Produto extends EntidadeAuditavel {
 
     @Column
     private Integer tempoEntregaMaximo;
+
+    @ManyToOne
+    private CategoriaProduto categoriaProduto;
 
 }
